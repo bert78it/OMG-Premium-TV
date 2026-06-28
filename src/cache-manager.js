@@ -311,7 +311,7 @@ class CacheManager extends EventEmitter {
             logger.log(this._sk(), 'Channels in cache:', data.channels.length, ', genres:', data.genres.length, ', cache rebuilt');
 
             // Salva nel database
-            this.saveCacheToDB();
+            await this.saveCacheToDB();
 
             this.emit('cacheUpdated', this.cache);
 
